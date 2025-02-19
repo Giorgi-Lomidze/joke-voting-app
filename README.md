@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Joke Voting App
 
-## Getting Started
+A fun web application that fetches random jokes from the [TeeHee API](https://www.freepublicapis.com/teehee-joke-api) and allows users to reveal punchlines, fetch new jokes, and vote on jokes.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Fetches random jokes from the **TeeHee API**.
+- Users can reveal the punchline of the joke.
+- Voting system: Users can react with **Love**, **laugh** and **like**.
+- Styled using CSS for a clean and interactive UI.
+- Built with **Next.js**
+
+## Installation
+
+#### Clone the Repository
+
+```
+git clone <repository-url>
+
+cd joke-voting-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Install Dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Start the development server:
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## API Endpoint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app fetches jokes from:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+https://teehee.dev/api/joke
+```
 
-## Deploy on Vercel
+Example API response:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+{
+  "id": "ding",
+  "question": "Why did the scientist disconnect the doorbell?",
+  "answer": "He wanted the no-bell prize.",
+  "permalink": "https://teehee.dev/api/joke/ding"
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+JOKE-VOTING-APP
+│── .next/
+│── node_modules/
+│── public/
+│── src/
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.js
+│   │   ├── page.js
+│   ├── components/
+│   │   ├── Buttons.js
+│   │   ├── Joke.js
+│   │   ├── JokeBox.css
+│   │   ├── JokeBox.js
+│   │   ├── Reactions.js
+│   ├── styles/
+│   │   ├── homepage.css
+│── .gitignore
+│── eslint.config.mjs
+│── jsconfig.json
+│── next.config.mjs
+│── package-lock.json
+│── package.json
+│── README.md
+```
